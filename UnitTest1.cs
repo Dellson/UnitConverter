@@ -17,7 +17,7 @@ namespace UnitConverterTest
         {
             DesiredCapabilities capabilities = new DesiredCapabilities();
 
-            capabilities.SetCapability("deviceName", "em");// ulator-5554");
+            capabilities.SetCapability("deviceName", "emulator-5554");
             //capabilities.SetCapability("deviceName", "ZTSWRGL7U8AA7P49");
             capabilities.SetCapability("platformName", "Android");
             capabilities.SetCapability("platformVersion", "8.0.0");
