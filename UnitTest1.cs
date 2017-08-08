@@ -20,7 +20,7 @@ namespace UnitConverterTest
             capabilities.SetCapability("deviceName", "em");// ulator-5554");
             //capabilities.SetCapability("deviceName", "ZTSWRGL7U8AA7P49");
             capabilities.SetCapability("platformName", "Android");
-            capabilities.SetCapability("platformVersion", "5.1");
+            capabilities.SetCapability("platformVersion", "8.0.0");
             capabilities.SetCapability("appPackage", "kr.sira.unit");
             capabilities.SetCapability("appActivity", "kr.sira.unit.SmartUnit");
 
@@ -65,35 +65,8 @@ namespace UnitConverterTest
         private void ClickVelocityElement()
         {
             string id = "kr.sira.unit:id/tab1_layout3";
-            AppiumWebElement velocityElement = null;
+            var velocityElement = driver.FindElementById(id);
 
-            do
-            {
-                try
-                {
-                    velocityElement = driver.FindElementById(id);
-                    //velocityElement.Click();
-                }
-                catch (OpenQA.Selenium.NoSuchElementException)
-                {
-                    try
-                    {
-                        //driver.FindElementById("android:id/message");
-                        string id2 = "kr.sira.unit:id/pager";
-                        var swipeableElement = driver.FindElementById(id2);
-
-                        int x = swipeableElement.Location.X;
-                        int y = swipeableElement.Location.Y;
-                        int width = swipeableElement.Size.Width;
-
-                        driver.Swipe(x + width - 1, y, x, y, 600);
-                    }
-                    catch (OpenQA.Selenium.NoSuchElementException) { }
-                }
-            }
-            while (velocityElement == null);
-            
-            //velocityElement = driver.FindElementById(id);
             velocityElement.Click();
         }
 
